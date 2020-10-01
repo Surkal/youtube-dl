@@ -19,6 +19,7 @@ from ..utils import (
     url_or_none,
 )
 from .dailymotion import DailymotionIE
+from .youtube import YoutubeIE
 
 
 class FranceTVBaseInfoExtractor(InfoExtractor):
@@ -313,16 +314,17 @@ class FranceTVEmbedIE(FranceTVBaseInfoExtractor):
 
 class FranceTVInfoIE(FranceTVBaseInfoExtractor):
     IE_NAME = 'francetvinfo.fr'
-    _VALID_URL = r'https?://(?:www|mobile|france3-regions)\.francetvinfo\.fr/(?:[^/]+/)*(?P<id>[^/?#&.]+)'
+    _VALID_URL = r'https?://(?:www|mobile|france3-regions|la1ere)\.francetvinfo\.fr/(?:[^/]+/)*(?P<id>[^/?#&.]+)'
 
     _TESTS = [{
-        'url': 'http://www.francetvinfo.fr/replay-jt/france-3/soir-3/jt-grand-soir-3-lundi-26-aout-2013_393427.html',
+        'url': 'https://www.francetvinfo.fr/replay-jt/france-3/soir-3/jt-grand-soir-3-jeudi-22-aout-2019_3561461.html',
         'info_dict': {
-            'id': '84981923',
+            'id': 'd12458ee-5062-48fe-bfdd-a30d6a01b793',
             'ext': 'mp4',
             'title': 'Soir 3',
-            'upload_date': '20130826',
-            'timestamp': 1377548400,
+            'upload_date': '20190822',
+            'timestamp': 1566510900,
+            'description': 'md5:72d167097237701d6e8452ff03b83c00',
             'subtitles': {
                 'fr': 'mincount:2',
             },
@@ -358,6 +360,22 @@ class FranceTVInfoIE(FranceTVBaseInfoExtractor):
     }, {
         'url': 'http://france3-regions.francetvinfo.fr/limousin/emissions/jt-1213-limousin',
         'only_matching': True,
+    }, {
+        'url': 'https://la1ere.francetvinfo.fr/guyane/emissions/guyane-soir',
+        'only_matching': True,
+    }, {
+        #Youtube embed
+        'url': 'https://la1ere.francetvinfo.fr/saintpierremiquelon/miquelon-langlade/des-langladiers-amoureux-de-leur-petit-coin-de-paradis-876474.html',
+        'info_dict': {
+            'id': 'fAUEkdDtLxo',
+            'ext': 'mp4',
+            'uploader_id': 'UCmmNJgGW0E6Zm2HfWJ-b88w',
+            'uploader': 'Saint-Pierre et Miquelon la 1ère',
+            'upload_date': '20200930',
+            'title': 'Des Langladiers amoureux de leur petit coin de paradis',
+            'description': 'md5:a33eb40be11b6e3d348d01678aed018a',
+        },
+        'add_ie': ['Youtube'],
     }]
 
     def _real_extract(self, url):
@@ -371,10 +389,17 @@ class FranceTVInfoIE(FranceTVBaseInfoExtractor):
                 self.url_result(dailymotion_url, DailymotionIE.ie_key())
                 for dailymotion_url in dailymotion_urls])
 
+        youtube_urls = YoutubeIE._extract_urls(webpage)
+        if youtube_urls:
+            return self.playlist_result([
+            self.url_result(youtube_url, YoutubeIE.ie_key())
+            for youtube_url in youtube_urls])
+
         video_id = self._search_regex(
             (r'player\.load[^;]+src:\s*["\']([^"\']+)',
              r'id-video=([^@]+@[^"]+)',
-             r'<a[^>]+href="(?:https?:)?//videos\.francetv\.fr/video/([^@]+@[^"]+)"'),
+             r'<a[^>]+href="(?:https?:)?//videos\.francetv\.fr/video/([^@]+@[^"]+)"',
+             r'data-id="([a-z0-9-]+)"'),
             webpage, 'video id')
 
         return self._make_url_result(video_id)
