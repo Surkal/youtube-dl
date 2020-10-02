@@ -6,7 +6,6 @@
  - **23video**
  - **24video**
  - **3qsdn**: 3Q SDN
- - **3sat**
  - **4tube**
  - **56.com**
  - **5min**
@@ -41,6 +40,8 @@
  - **AlJazeera**
  - **Allocine**
  - **AlphaPorno**
+ - **Alura**
+ - **AluraCourse**
  - **AMCNetworks**
  - **AmericasTestKitchen**
  - **anderetijden**: npo.nl, ntr.nl, omroepwnl.nl, zapp.nl and npo3.nl
@@ -209,6 +210,7 @@
  - **daum.net:user**
  - **DBTV**
  - **DctpTv**
+ - **DeezerAlbum**
  - **DeezerPlaylist**
  - **defense.gouv.fr**
  - **democracynow**
@@ -224,6 +226,7 @@
  - **Disney**
  - **dlive:stream**
  - **dlive:vod**
+ - **DoodStream**
  - **Dotsub**
  - **DouyuShow**
  - **DouyuTV**: 斗鱼
@@ -234,6 +237,8 @@
  - **drtv**
  - **drtv:live**
  - **DTube**
+ - **duboku**: www.duboku.co
+ - **duboku:list**: www.duboku.co entire series
  - **Dumpert**
  - **dvtv**: http://video.aktualne.cz/
  - **dw**
@@ -251,6 +256,7 @@
  - **EllenTube**
  - **EllenTubePlaylist**
  - **EllenTubeVideo**
+ - **Elonet**
  - **ElPais**: El País
  - **Embedly**
  - **EMPFlix**
@@ -352,6 +358,7 @@
  - **hotstar:playlist**
  - **Howcast**
  - **HowStuffWorks**
+ - **hrfernsehen**
  - **HRTi**
  - **HRTiPlaylist**
  - **Huajiao**: 花椒直播
@@ -454,6 +461,7 @@
  - **lynda**: lynda.com videos
  - **lynda:course**: lynda.com online courses
  - **m6**
+ - **MagentaMusik360**
  - **mailru**: Видео@Mail.Ru
  - **mailru:music**: Музыка@Mail.Ru
  - **mailru:music:search**: Музыка@Mail.Ru
@@ -524,6 +532,7 @@
  - **MySpace:album**
  - **MySpass**
  - **Myvi**
+ - **MyVideoGe**
  - **MyVidster**
  - **MyviEmbed**
  - **MyVisionTV**
@@ -672,6 +681,7 @@
  - **plus.google**: Google Plus
  - **podomatic**
  - **Pokemon**
+ - **PokemonWatch**
  - **PolskieRadio**
  - **PolskieRadioCategory**
  - **Popcorntimes**
@@ -837,6 +847,9 @@
  - **stanfordoc**: Stanford Open ClassRoom
  - **Steam**
  - **Stitcher**
+ - **StoryFire**
+ - **StoryFireSeries**
+ - **StoryFireUser**
  - **Streamable**
  - **streamcloud.eu**
  - **StreamCZ**
@@ -897,7 +910,6 @@
  - **ThisAV**
  - **ThisOldHouse**
  - **TikTok**
- - **TikTokUser**
  - **tinypic**: tinypic.com videos
  - **TMZ**
  - **TMZArticle**
@@ -942,6 +954,7 @@
  - **TVNoe**
  - **TVNow**
  - **TVNowAnnual**
+ - **TVNowFilm**
  - **TVNowNew**
  - **TVNowSeason**
  - **TVNowShow**
@@ -1149,7 +1162,7 @@
  - **Zaq1**
  - **Zattoo**
  - **ZattooLive**
- - **ZDF**
+ - **ZDF-3sat**
  - **ZDFChannel**
  - **zingmp3**: mp3.zing.vn
  - **Zype**
